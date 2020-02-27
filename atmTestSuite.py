@@ -5,6 +5,7 @@ from src.SearchAtmTestCase import SearchTest
 from src.HomePageAtmTestCase import HomePageTest
 from src.DataCatalogueAtmTestCase import DataCatalogueTest
 from src.ProductsCatalogueAtmTestCase import ProductsCatalogueTest
+from src.ChartsAtmTestCase import ChartsTest
 from src.data.TestData import TestData
 
 BASE_URL = 'https://atmosphere.copernicus.eu'
@@ -12,14 +13,16 @@ TESTS = [
     HomePageTest,
     SearchTest,
     DataCatalogueTest,
-    ProductsCatalogueTest
+    ProductsCatalogueTest,
+    ChartsTest,
 ]
 
 URL_EXT = {
     HomePageTest: '',
     SearchTest: '',
     DataCatalogueTest: TestData.DATA_URL_EXT,
-    ProductsCatalogueTest: TestData.CATALOGUE_URL_EXT
+    ProductsCatalogueTest: TestData.CATALOGUE_URL_EXT,
+    ChartsTest: TestData.CHARTS_URL_EXT,
 }
 
 parser = common.build_cmd_arguments()
@@ -37,7 +40,7 @@ for test in TESTS:
             name,
             driver,
             home_url + URL_EXT[test]
-            )
+        )
         test_suite.addTest(test_case)
 
 runner = unittest.TextTestRunner(verbosity=args.verbose)
