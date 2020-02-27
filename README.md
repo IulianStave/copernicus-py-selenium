@@ -1,16 +1,17 @@
 
 Selenium based automated testing.
+
 This package requires **Python 3.5**!
+
 
 ==========================
 
 Copernicus test
 
 ==========================
+
 Usage:
 ------
-
-::
 
     $ virtualenv copenv
     $ source copenv/bin/activate
